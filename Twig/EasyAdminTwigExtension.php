@@ -322,6 +322,7 @@ class EasyAdminTwigExtension extends \Twig_Extension
      * Returns the actions configured for each item displayed in the batch section.
      * This method is needed because some actions are displayed globally for the
      * entire view.
+     * Excluded by default actions in array('new', 'search', 'edit', 'list');
      *
      * @param string $view
      * @param string $entityName
@@ -343,7 +344,7 @@ class EasyAdminTwigExtension extends \Twig_Extension
             return;
         }
 
-        $excludedActions = array('new', 'search', 'edit');
+        $excludedActions = array('new', 'search', 'edit', 'list');
 
         return array_filter($viewActions, function ($action) use ($excludedActions, $batchActions) {
             return !in_array($action['name'], $excludedActions) && in_array($action['name'], $batchActions);
