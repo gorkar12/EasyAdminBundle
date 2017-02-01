@@ -313,7 +313,7 @@ class EasyAdminTwigExtension extends \Twig_Extension
             'edit' => array(),
             'new' => array(),
             'show' => array(),
-            'batch' => array('new', 'search', 'edit', 'list'),
+            'batch' => array('new', 'search', 'show', 'edit', 'list'),
         );
         $excludedActions = $actionsExcludedForItems[$view];
 
